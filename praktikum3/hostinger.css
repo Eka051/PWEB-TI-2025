@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    width: 100px;
+}
+
+.img {
+    width: 500px;
+}
+
+@media (min-width: 100px) and (max-width: 640px) {
+    .img {
+        width: 200px;
+    }
+}
