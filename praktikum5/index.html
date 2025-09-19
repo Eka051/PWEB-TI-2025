@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Lanjutan</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <h1>Judul</h1>
+
+    <p class="paragraf1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab placeat repellendus quo, maiores
+        odio labore eius, deleniti accusantium suscipit rem, ea laudantium. Numquam ipsam reiciendis aspernatur maxime
+        expedita laborum consequuntur?</p>
+
+    <div class="main">
+        <p class="intro">paragraf introo</p>
+    </div>
+
+    <button id="button">Ubah Text</button> -->
+    <h1>List Fakultas</h1>
+    <select name="" id="dropdown">
+        <option value="">Pilih Fakultas</option>
+    </select>
+
+    <script>
+        // const judul = document.getElementsByTagName('h1')[0]
+        // judul.textContent = "diubah dengan js"
+
+        // $('h1').text('Diubah dari JQuery').css('color', 'green')
+        // $('.paragraf1').text('paragraf baru dari jquery')
+        // $('div.main > p.intro').text('kombinasi selector').css({
+        //     'color': 'red',
+        //     'font-size' : '50px',
+        //     'font-weight' : 'bold'
+        // })
+        // $('#button').click(function() {
+        //     $('div.main > p.intro').text('button diklik')
+        //     $('h1').toggle()
+        // })
+
+        // console.log("1")
+        // setTimeout(() => {
+        //     console.log("2")
+        // }, 2000);
+        // console.log("3")
+
+        // const data = fetch('https://dev-api.up.railway.app/api/v1/faculties')
+        //     .then(data => data.json())
+        //     .then(faculty => console.log(faculty))
+        //     .catch(error => console.log(error))
+
+        async function loadData() {
+            try {
+            const response = await fetch('https://dev-api.up.railway.app/api/v1/faculties');
+            const json = await response.json();
+            console.log(json)
+            const list = json.data
+
+            const $dropdown = $('#dropdown');
+
+            list.forEach(faculty => {
+                $dropdown.append($('<option>').text(faculty.name));
+            });
+            } catch (err) {
+            console.error(err);
+            }
+        }
+
+        loadData()
+
+        // console.log(data)    
+    </script>
+</body>
+
+</html>
