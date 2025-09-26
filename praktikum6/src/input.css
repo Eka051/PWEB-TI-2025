@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.lingkaran-merah {
+  @apply h-20 w-20 rounded-full bg-red-500;
+}
+
+.lingkaran-biru {
+  @apply h-20 w-20 rounded-full bg-blue-500;
+}
+
+.lingkaran-ijo {
+  @apply h-20 w-20 rounded-full bg-green-500;
+}
