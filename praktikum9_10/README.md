@@ -7,54 +7,116 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# How to Clone This Repository
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 1) Clone repositori
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Buka **Git Bash** lalu ketik:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```bash
+git clone https://github.com/Eka051/PWEB-TI-2025.git
+```
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 2) Buka di Visual Studio Code
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Masuk ke folder proyek lalu buka dengan VS Code:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+cd PWEB-TI-2025
+code .
+```
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 3) Jalankan perintah di Terminal VS Code
 
-### Premium Partners
+Buka **Terminal** (View → Terminal) kemudian eksekusi berurutan:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+**3.1.** Instal dependensi PHP
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**3.2.** Refresh autoload Composer (opsional, tapi aman dijalankan)
 
-## Code of Conduct
+```bash
+composer dump-autoload
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**3.3.** Duplikasi file environment
 
-## Security Vulnerabilities
+* macOS/Linux:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+cp .env.example .env
+```
+
+* Windows (PowerShell):
+
+```powershell
+copy .env.example .env
+```
+
+**3.4.** Generate APP_KEY
+
+```bash
+php artisan key:generate
+```
+
+**3.5. (Opsional, jika pakai database)** Migrasi + seeder
+
+```bash
+php artisan migrate --seed
+```
+
+> Pastikan pengaturan database di `.env` sudah benar sebelum migrasi.
+
+**3.6. (Opsional, jika ada upload/storage)** Buat symlink storage
+
+```bash
+php artisan storage:link
+```
+
+**3.7.** Instal dependensi frontend
+
+```bash
+npm install
+```
+
+**3.8.** Jalankan Vite (pilih salah satu)
+
+* mode pengembangan (auto-reload):
+
+```bash
+npm run dev
+```
+
+* build produksi:
+
+```bash
+npm run build
+```
+
+**3.9.** Jalankan server Laravel
+
+```bash
+php artisan serve
+```
+
+Akses web di: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+---
+
+atau (recommended)
+
+```bash
+composer run dev
+```
+
+untuk menjalankan php & vite
 
 ## License
 
