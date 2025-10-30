@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [ // Kolom yang bisa diisi
-        'user_id',
+        // 'user_id',
         'name',
         'email',
         'password',
@@ -54,8 +54,8 @@ class User extends Authenticatable
         ];
     }
 
-    public function product()
+    public function products()
     {
-        return $this->hasMany(ProductModel::class, 'user_id', 'user_id');
+        return $this->hasMany(Product::class, 'user_id', 'user_id');
     }
 }
